@@ -2,9 +2,10 @@ import './App.css';
 import React, {useState } from 'react';
 import axios from "axios";
 
-export default function App() {
+export default function Form() {
     const [city, setCity] = useState(null);
   const [ul, setUl] = useState(null);
+  const [h1, setH1]= useState("Weather App");
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -13,10 +14,12 @@ export default function App() {
     axios.get(url).then(showTemperature);
   }
   function updateCity(event) {
+
     setCity(event.target.value);
   }
   function showTemperature(response) {
     console.log(response);
+        setH1(`Weather in ${response.data.name}`);
     setUl(
       <ul>
         <li>Temperature: {Math.round(response.data.main.temp)}°C</li>
@@ -33,7 +36,7 @@ export default function App() {
   }
   return (
     <div className="Form">
-      <h1>Weather App</h1>
+      <h1>{h1}</h1>
       <form onSubmit={handleSubmit}>
         <input type="search" placeholder="Enter a city" onChange={updateCity} />
         <input type="submit" value="Search" />
