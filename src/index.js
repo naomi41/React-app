@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Form from './Form';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Form />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function Index() {
+  return (
+    <div className="Index">
+   <Form />
+    </div>
+  );
+}
 
- 
+const rootElement = document.getElementById("root");
+ReactDOM.render(< Index/>, rootElement);
