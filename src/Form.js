@@ -29,6 +29,7 @@ export default function Form() {
         <li>
           <img
             src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
+            alt= {response.data.weather[0].description}
           ></img>
         </li>
       </ul>
