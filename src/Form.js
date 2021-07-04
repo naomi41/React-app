@@ -1,4 +1,4 @@
-import './App.css';
+import './Form.css';
 import React, {useState } from 'react';
 import axios from "axios";
 
@@ -21,7 +21,7 @@ export default function Form() {
     console.log(response);
         setH1(`Weather in ${response.data.name}`);
     setUl(
-      <ul>
+      <ul className="hi" >
         <li>Temperature: {Math.round(response.data.main.temp)}°C</li>
         <li>Description: {response.data.weather[0].description} </li>
         <li>Humidity: {Math.round(response.data.main.humidity)} %</li>
@@ -42,7 +42,7 @@ export default function Form() {
         <input type="search" placeholder="Enter a city" onChange={updateCity} />
         <input type="submit" value="Search" />
       </form>
-      <div>{ul}</div>
+      <div >{ul}</div>
     </div>
   );
 }
