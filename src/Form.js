@@ -1,6 +1,7 @@
 import './Form.css';
 import React, {useState } from 'react';
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Form() {
     const [city, setCity] = useState(null);
@@ -40,7 +41,7 @@ export default function Form() {
       <h1>{h1}</h1>
       <form onSubmit={handleSubmit}>
         <input type="search" placeholder="Enter a city" onChange={updateCity} />
-        <input type="submit" value="Search" />
+        <button type="submit" class="btn btn-primary">Primary</button>
       </form>
       <div >{ul}</div>
     </div>
