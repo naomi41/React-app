@@ -39,10 +39,26 @@ export default function Form() {
   return (
     <div className="Form">
       <h1>{h1}</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="search" placeholder="Enter a city" onChange={updateCity} />
-        <button type="submit" class="btn btn-primary">Primary</button>
+
+      
+      <form  onSubmit={handleSubmit}>
+       <div className="row">
+     <div class="col-3">
+     <input onChange={updateCity} type="search" placeHolder="Type a city.." 
+      autoComplete="off" class="form-control form-control-lg  shadow-sm" />
+      </div>
+
+      <div class="col-1.5">
+       <input type="submit" value="Search" class="form-control btn btn-primary form-control-lg  " />
+      </div>
+      </div>
       </form>
+      <div class="col-2">
+      <button class="btn btn-success w-100 form-control-lg " id="current-location-button">
+      Current
+      </button>
+      </div>
+
       <div >{ul}</div>
     </div>
   );
