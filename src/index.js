@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import Form from './Form';
 
 
+
 function Index() {
   return (
     <div className="Index">
-      <a href="https://github.com/naomi41/React-app" target="_blank" > Open source code </a>
-   <Form />
+      
+   <Form City="Tel Aviv"/>
    
     </div>
 
