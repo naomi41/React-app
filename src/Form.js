@@ -6,16 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Form(props) {
   console.log(props.City);
 
-    const [city, setCity] = useState(props.City);
+    const [city, setCity] = useState(null);
   const [ul, setUl] = useState(null);
   const [h1, setH1]= useState(`Weather App`);
 
-
-  function handleTemp(){
-     let apiKey = `a8f5a22819d25df63838b32e0cf4b2f4`;
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(url).then(showTemperature);
-  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -64,9 +58,6 @@ export default function Form(props) {
       </div>
       </div>
       </form>
-
-
-
       <div >{ul}</div>
     </div>
     </div>
