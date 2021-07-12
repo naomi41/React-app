@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Form from './Form';
-import Forecast from './Forecast';
-
+import Weather from './Weather';
 
 function Index() {
   return (
     <div className="Index">
-      
-   <Form City="Tel Aviv"/>
-   <Forecast />
+    <Weather />
     </div>
 
   );
