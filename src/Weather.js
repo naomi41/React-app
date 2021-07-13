@@ -3,6 +3,9 @@ import React, {useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WeatherInfo from './WeatherInfo';
+import Loader from "react-loader-spinner";
+
+
 
 export default function Weather(){
 const [city, setCity] = useState('bibi');
@@ -39,7 +42,6 @@ function search(){
   }
 
 if (weatherData.ready) {
-
     return(
      <div className="Weather">
       <div className="card">
@@ -62,8 +64,11 @@ if (weatherData.ready) {
       </div>
     )}else{
       search()
-      return 'loding'
-    }
-
-    
-}
+      return(
+        <Loader 
+        type="ThreeDots"
+       color="#00BFFF"
+       height={80}
+       width={80} />
+      )
+      }}
