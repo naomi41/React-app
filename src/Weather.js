@@ -4,8 +4,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WeatherInfo from './WeatherInfo';
 import Loader from "react-loader-spinner";
-
-
+import FormattedDate from './FormattedDate';
 
 export default function Weather(){
 const [city, setCity] = useState('bibi');
@@ -46,7 +45,9 @@ if (weatherData.ready) {
      <div className="Weather">
       <div className="card">
      <div className="card-body">
+   
       <h1> {weatherData.city} </h1>
+      <FormattedDate/>
       <form onSubmit={handleSubmit}> 
        <div className="row">
      <div className="col-3">
@@ -67,7 +68,7 @@ if (weatherData.ready) {
       return(
         <Loader 
         type="ThreeDots"
-       color="#00BFFF"
+       color="#000000"
        height={80}
        width={80} />
       )

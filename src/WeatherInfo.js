@@ -9,7 +9,7 @@ export default function WeatherInfo(props){
             alt= {props.info.description} ></img> 
 
             <ul className="info">
-           <li className="temp" > {Math.round(props.info.temp)}°C </li>
+           <li > <span className="temp">{Math.round(props.info.temp)}</span><span className="units">°C</span> </li>
            <li> {props.info.description} </li>
           </ul>
 
