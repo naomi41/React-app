@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./WeatherInfo.css";
 export default function WeatherInfo(props){
-    
+    const[temp, setTemp] = useState(props.info.temp);
+    console.log(props.info.icon)
     return(
 <div>  
             <img
@@ -9,7 +10,7 @@ export default function WeatherInfo(props){
             alt= {props.info.description} ></img> 
 
             <ul className="info">
-           <li > <span className="temp">{Math.round(props.info.temp)}</span><span className="units">°C</span> </li>
+           <li > {Math.round(temp)}°C </li>
            <li> {props.info.description} </li>
           </ul>
 

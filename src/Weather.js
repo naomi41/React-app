@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import WeatherInfo from './WeatherInfo';
 import Loader from "react-loader-spinner";
 import FormattedDate from './FormattedDate';
+import Forecast from "./Forecast";
 
 export default function Weather(){
 const [city, setCity] = useState('bibi');
@@ -60,6 +61,7 @@ if (weatherData.ready) {
       </div>
       </form>
      <WeatherInfo info={weatherData} />
+     <Forecast/>
      </div>
     </div>
       </div>
