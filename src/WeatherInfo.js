@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "./WeatherInfo.css";
 export default function WeatherInfo(props){
-    const[temp, setTemp] = useState(props.info.temp);
+    const temp = props.info.temp;
     console.log(props.info.icon)
     return(
 <div>  
