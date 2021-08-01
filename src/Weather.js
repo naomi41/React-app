@@ -8,7 +8,7 @@ import FormattedDate from './FormattedDate';
 import Forecast from "./Forecast";
 
 export default function Weather(){
-const [city, setCity] = useState('bibi');
+const [city, setCity] = useState('paris');
 const [weatherData, setWeatherData] = useState({ ready: false });
 
 function search(){
@@ -61,7 +61,7 @@ if (weatherData.ready) {
       </div>
       </form>
      <WeatherInfo info={weatherData} />
-     <Forecast info={weatherData}/>
+     <Forecast coordinates={weatherData.coordinates}/>
      </div>
     </div>
       </div>

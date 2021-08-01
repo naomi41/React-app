@@ -1,6 +1,6 @@
 .imgForcast{
     position: relative;
-    left:9px;
+   left: 9px;
 }
 .WeatherForecast-temperature-min {
   opacity: 0.6;
@@ -9,5 +9,4 @@
 .WeatherForecast{
 position: relative;
     bottom: 100px;
-    right: 100px;
 }

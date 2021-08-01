@@ -4,37 +4,32 @@ import axios from 'axios';
 import ForecastDay from './ForecastDay';
 
 export default  function Forecast(props){
-    const [weather, setWeather] = useState(null);
-      const [ready, setReady] = useState(false);
 
-     function search(){
-    let lat =props.info.coordinates.lat; 
-    let lon =props.info.coordinates.lon; 
-    let apiKey = `19feeaddd6a1c9e30cabe069c18a6aa4`;
-    let url =`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
-    axios.get(url).then(showTemperature);
-     }
-     function showTemperature(response) {
-       setWeather(response.data.daily);
-       setReady(true);
-      console.log(response.data.daily);
-      
-     }
-    
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null);
 
-    if (ready) {
+  function handleResponse(response) {
+    setForecast(response.data.daily);
+    setLoaded(true);
+  }
+
+  if (loaded) {
     return (
-    <div className="WeatherForecast">
-      <div className="row">
-      <ForecastDay  data={weather[0].temp.max}  />
+      <div className="WeatherForecast">
+        <div className="row">
+          <div className="col">
+            <ForecastDay data={forecast[0]} />
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let longitude = props.coordinates.lon;
+    let latitude = props.coordinates.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-      <ForecastDay/>
-      <ForecastDay/>
-      <ForecastDay/>
-      <ForecastDay/>
-        
-    </div>
-    </div>
-   ); }else {search() 
-    return null
-}}
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
+  }}
