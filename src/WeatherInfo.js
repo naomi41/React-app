@@ -10,9 +10,9 @@ export default function WeatherInfo(props){
             alt= {props.info.description} ></img> 
 
             <ul className="info">
-           <li > {Math.round(temp)}°C </li>
+           <li > <span className="temp" >{Math.round(temp)}</span><span className="c" >°C</span> </li>
            <li> {props.info.description} </li>
-           <li> {Math.round( props.info.tempMin)}/{Math.round(props.info.tempMax)} </li>
+           
           </ul>
 
          <ul className="info2">
