@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useLayoutEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import "./Forecast.css"
 import axios from 'axios';
 import ForecastDay from './ForecastDay';
@@ -30,6 +30,7 @@ export default  function Forecast(props){
             }else{
             return null;
           }})}
+
         </div>
       </div>
     );
